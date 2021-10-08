@@ -21,3 +21,27 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sh -c "$(curl -sSfL https://release.solana.com/v1.8.0/install)"
 # ahora reinicia tus variables de entorno
 ```
+
+## 1. Descargamos el proyecto de ejemplo
+
+```bash
+git clone https://github.com/FilosofiaCodigo/SolanaHolaMundo
+cd SolanaHolaMundo
+```
+
+## 2. Nos preparamos para lanzar
+
+Nos conectamos al devnet y conseguimos fondos desde el faucet.
+
+```bash
+solana config set --url https://api.devnet.solana.com
+solana-keygen new --force
+solana airdrop 5 
+```
+
+## 3. Lanzamos
+
+```bash
+cargo build-bpf --bpf-out-dir=dist/program
+solana program deploy dist/program/helloworld.so
+```
