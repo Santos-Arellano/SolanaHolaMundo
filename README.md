@@ -7,7 +7,7 @@ Tienen que tener instaladado [NodeJS](https://nodejs.org/es/), les recomiendo in
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 # ahora reinicia tus variables de entorno
 nvm install 14
-nvm alias default 14
+nvm alias default 14 
 
 # NodeJS
 npm install --global yarn
